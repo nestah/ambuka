@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Document</title>
+    <meta charset="UTF-9">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>   
+</head>
+<a href="#" style="margin-left: 40% ; font-size: 28px; color: rgb(102, 70, 78);">WEB MAPPING </a>
+<h2 style="margin-left: 40%; color:brown">MY FIRST WEB PAGE</h2>
+<body>
+    <section>
+<div id="map" style="width:100%; height:400px;"></div>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <script>
+            // map options
+            var mapOptions = {
+             center:[-1.1018, 37.0144],
+             zoom:10
+            }
+            //create map object
+            var map = new L.map('map', mapOptions)
+            //layer obj
+            var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+          //add layer
+            map.addLayer(layer);
+         // Adding layer to the map
+        map.addLayer(layer);
+        var marker = L.marker([-1.1018, 37.0144]) .addTo(map);
+        //Showing a maker on the map
+        marker.bindPopup("<b>911</b><br>JUJA") .openPopup();
+        function onMapClick(e){
+            alert("You clicked map at" +e.latlng);
+        }
+        map.on('clicck', onMapClick);
+           </script>
+    </section>
+    <section class="footer">
+     <style>
+        .footer{    
+            background-color: rgb(156, 151, 155);
+            min-height: 30vh;
+        }
+        </style>
+         <div class="footer_section">
+       <style>
+        .footer_section{
+            display: flex;
+            flex-direction: row;
+            row-gap: 2rem;
+            color: rgb(19, 18, 18);
+            list-style: none;
+            margin-top: 1.8rem;
+        }
+       </style>
+       <li class="contributers">CONTRIBUTERS
+        <ul style="color: rgb(6, 6, 202);">LADONA OTEMBA</ul>
+        <ul style="color: rgb(6, 6, 202);">ENC222-138/2019</ul>
+        
+       </li>
+       <li  style="margin-left: 40% ;" class="authers">AUTHORS
+        <ul style="color: blue;">OPEN STREET</ul>
+    </li>
+       <li  style="margin-left: 32% ;" class="marginal information">MARGINAL INFORMATION
+        <ul style=" color: rgb(18, 18, 160);">WELCOME</ul>
+    </li>
+        </div>
+    </div>
+    
+</section>
+
+</body>
+</html>
